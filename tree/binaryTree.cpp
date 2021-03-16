@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2021-03-16 09:58:38
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2021-03-16 11:28:35
+ * @LastEditTime: 2021-03-16 11:48:31
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -77,12 +77,12 @@ void insert(node *&root, int val)
   //由二叉树的性质，val应该插在左子树
   if (root->lchild)
   {
-    insert(root->lchild);
+    insert(root->lchild, val);
   }
   //由二叉树的性质，val应该插在右子树
   else
   {
-    insert(root->rchild);
+    insert(root->rchild, val);
   }
 }
 
