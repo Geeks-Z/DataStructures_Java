@@ -4,17 +4,21 @@
  * @Author: Geeks_Z
  * @Date: 2021-03-16 15:23:03
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2021-03-16 16:05:42
+ * @LastEditTime: 2021-03-17 21:45:59
  */
 #include <stdio.h>
 #include <stdlib.h>
 
+const int maxn = 100;
 struct node
 {
   int data;
-  int lchild;
-  int rchild;
+  node *lchild;
+  node *rchild;
 };
+
+int pre[maxn];
+int in[maxn];
 
 node *creat(int preL, int preR, int inL, int inR)
 {
