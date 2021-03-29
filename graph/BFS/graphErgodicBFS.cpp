@@ -1,16 +1,17 @@
 /*
- * @Descripttion: 
+ * @Descripttion: 图的遍历-广度优先
  * @version: 1.0
  * @Author: Geeks_Z
  * @Date: 2021-03-29 20:48:40
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2021-03-29 21:55:13
+ * @LastEditTime: 2021-03-29 23:36:35
  */
 #include <stdio.h>
 #include <queue>
 
 using namespace std;
 
+//当需要输出层时  就要存储结点
 struct node
 {
   //顶点的编号
