@@ -1,10 +1,10 @@
 /*
- * @Descripttion: å¹¶æŸ¥é›†
+ * @Descripttion: ²¢²é¼¯
  * @version: 1.0
  * @Author: Geeks_Z
  * @Date: 2021-03-25 21:29:30
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2021-03-25 21:43:45
+ * @LastEditTime: 2021-03-26 09:24:41
  */
 #include <stdio.h>
 
@@ -27,9 +27,25 @@ void unionSet(int a, int b)
   int faB = findFather(b);
   if (faA != faB)
   {
-    //åˆå¹¶ å°†ä¸€ä¸ªé›†åˆçš„æ ¹ç»“ç‚¹çš„çˆ¶èŠ‚ç‚¹è®¾ç½®ä¸ºå¦ä¸€ä¸ªæ ¹ç»“ç‚¹
+    //ºÏ²¢ ½«Ò»¸ö¼¯ºÏµÄ¸ù½áµãµÄ¸¸½áµãÉèÖÃÎªÁíÒ»¸ö¸ù½áµã
     father[faA] = faB;
   }
+}
+
+//Â·¾¶Ñ¹Ëõ
+void  compressPath(int x){
+	//ÒòÎªx×îÖÕ»á±ä³É¸ù½Úµã ËùÒÔÏÈ±£´æxµÄÖµ
+	int a = x;
+	while(x != father[x]){
+		x = father[x];
+	}
+	
+	while(a != father[a]){
+		int z = a;
+		a = father[a];
+		father[z] = x;
+	}
+	
 }
 
 int main()
