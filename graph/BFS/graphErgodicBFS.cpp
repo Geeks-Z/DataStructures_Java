@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2021-03-29 20:48:40
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2021-03-29 23:36:35
+ * @LastEditTime: 2021-05-12 18:11:25
  */
 #include <stdio.h>
 #include <queue>
@@ -29,7 +29,7 @@ int n;
 int G[MAXN][MAXN];
 //图的邻接表
 vector<int> Adj[MAXN];
-vector<node> AdjN[MAXN];
+vector<node> AdjNode[MAXN];
 
 //如果顶点i已被访问 则inq[i] = true
 bool inq[MAXN] = {false};
@@ -85,6 +85,7 @@ void BFS(int s)
   start.v = s;
   start.layer = 0;
   q.push(start);
+  //起始点的编号设为已被加入队列
   inq[start.v] = true;
   while (!q.empty())
   {
@@ -92,14 +93,15 @@ void BFS(int s)
     node topNode = q.front();
     q.pop();
     int u = topNode.v;
-    for (int i = 0; i < Adj[u].size(); i++)
+    for (int i = 0; i < AdjNode[u].size(); i++)
     {
-
-      node next = AdjN[u][i];
+      //从u出发能到达的顶点
+      node next = AdjNode[u][i];
       next.layer = topNode.layer + 1;
       if (inq[next.v] == false)
       {
         q.push(next);
+        //next的编号设为已被加入过队列
         inq[next.v] = true;
       }
     }

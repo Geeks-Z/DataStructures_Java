@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2021-03-26 11:54:34
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2021-03-29 23:33:20
+ * @LastEditTime: 2021-04-14 14:41:30
  */
 #include <stdio.h>
 #include <vector>
@@ -35,11 +35,11 @@ void DFS(int u, int depth)
 	//访问u
 	vis[u] = true;
 	//访问u的邻接点
-	for (int i = 0; i < n; i++)
+	for (int v = 0; v < n; v++)
 	{
-		if (G[u][i] != INF)
+		if (vis[v] == false && G[u][v] != INF)
 		{
-			DFS(G[u][i], depth + 1);
+			DFS(v, depth + 1);
 		}
 	}
 }
