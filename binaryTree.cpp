@@ -77,12 +77,12 @@ void insert(node *&root, int val)
   //由二叉树的性质，val应该插在左子树
   if (root->lchild)
   {
-    insert(root->lchild);
+    insert(root->lchild, val);
   }
   //由二叉树的性质，val应该插在右子树
   else
   {
-    insert(root->rchild);
+    insert(root->rchild, val);
   }
 }
 

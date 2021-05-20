@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2021-03-16 11:45:59
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2021-03-18 09:55:06
+ * @LastEditTime: 2021-05-20 21:31:17
  */
 #include <stdio.h>
 #include <queue>
@@ -77,19 +77,23 @@ void postOrder(node *root)
 
 void layerOrder(node *root)
 {
+  //队列里存放地址-->实现对原元素的修改
   queue<node *> q;
   root->layer = 1;
   q.push(root);
   while (!q.empty())
   {
+    //取出队首元素
     node *temp = q.front();
     printf("%d", temp->data);
     q.pop();
+    //左子树非空
     if (temp->lchild)
     {
       temp->lchild->layer = temp->layer + 1;
       q.push(temp->lchild);
     }
+    //右子树非空
     if (temp->rchild)
     {
       temp->rchild->layer = temp->layer + 1;
