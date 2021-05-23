@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2021-03-16 09:58:38
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2021-03-16 11:48:31
+ * @LastEditTime: 2021-05-21 16:12:25
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -61,13 +61,14 @@ void modify(node *root, int x, int newData)
 /**
  * 特别注意root使用了引用，即在函数中对root的修改会改变原变量的值
  * 如果不使用引用，root = newNode(val)这个语句对root的修改就不能
- * 作用到原变量（即上一层root->lchild与root->rchild）上去即不能把
+ * 作用到原变量（即上一层root->lchild与root->rchild） 即不能把
  * 新结点连接到二叉树上
  * ！！！如果函数中需要新建结点，即对二叉树的结构进行改变，就需要加引用
  * 只是修改当前已有结点的内容，或是遍历 不需要加引用
  */
 void insert(node *&root, int val)
 {
+  //空树  说明查找失败 即插入位置
   if (root == NULL)
   {
     root = newNode(val);
@@ -86,7 +87,18 @@ void insert(node *&root, int val)
   }
 }
 
-int main()
+/**
+ * @Descripttion: 二叉树的创建
+ * @param {int} data
+ * @param {int} n
+ * @return {*}
+ */
+node *creatBinaryTree(int data[], int n)
 {
-  return 0;
+  node *root = NULL;
+  for (int i = 0; i < n; i++)
+  {
+    insert(root, data[i]);
+  }
+  return root;
 }

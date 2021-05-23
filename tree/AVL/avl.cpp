@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2021-03-25 19:53:56
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2021-03-25 21:03:17
+ * @LastEditTime: 2021-05-22 10:07:54
  */
 #include <stdio.h>
 #include <algorithm>
@@ -72,6 +72,11 @@ void search(node *root, int val)
   }
 }
 
+/**
+ * @Descripttion: 左旋
+ * @param {node} *root
+ * @return {*}
+ */
 void leftRotation(node *root)
 {
   //定义一个结点保存根结点的右子结点
@@ -85,6 +90,11 @@ void leftRotation(node *root)
   root = newRoot;
 }
 
+/**
+ * @Descripttion: 右旋
+ * @param {node} *root
+ * @return {*}
+ */
 void rightRotation(node *root)
 {
   //定义一个结点保存根结点的左子结点
@@ -108,7 +118,9 @@ void insert(node *&root, int val)
   }
   if (root->data > val)
   {
+    //往左子树插入
     insert(root->lchild, val);
+    //跟新高度
     updateHeight(root);
     if (getBalanceFactor(root) == 2)
     {
@@ -126,6 +138,7 @@ void insert(node *&root, int val)
   }
   else
   {
+    //往右子树插入
     insert(root->rchild, val);
     updateHeight(root);
     if (getBalanceFactor(root) == -2)

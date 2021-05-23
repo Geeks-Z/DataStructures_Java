@@ -8,6 +8,8 @@
  */
 
 #include <stdio.h>
+#include <algorithm>
+using namespace std;
 const int maxn = 100;
 //定义一个二叉堆 元素个数 从1号位开始存储
 int n = 10;
@@ -33,9 +35,7 @@ void downAdjust(int low, int high)
     if (heap[i] < heap[j])
     {
       //当前结点与子结点进行交换
-      int temp = heap[i];
-      heap[i] = heap[j];
-      heap[j] = temp;
+      swap(heap[i], heap[j]);
       i = j;
       j = 2 * i;
     }

@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2021-03-25 09:18:36
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2021-03-25 11:41:06
+ * @LastEditTime: 2021-05-21 15:11:02
  */
 
 #include <stdio.h>
@@ -35,10 +35,11 @@ void search(node *root, int val)
     printf("%d", root->data);
   }
   //往右子树递归查找
-  if (root->data < val)
+  else if (root->data < val)
   {
     search(root->rchild, val);
   }
+  //往左子树递归查找
   else
   {
     search(root->lchild, val);
