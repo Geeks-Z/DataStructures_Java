@@ -33,7 +33,7 @@ bool bellmanFord(int s)
 {
   fill(d, d + MAXV, INF);
   d[s] = 0;
-  for (int i = 0; i < n; i++)
+  for (int i = 0; i < n - 1; i++)
   {
     //松弛每条边
     for (int u = 0; u < n; u++)
