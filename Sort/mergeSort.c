@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2021-05-08 16:12:50
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2021-05-23 10:41:38
+ * @LastEditTime: 2021-05-24 14:58:07
  */
 #include <stdio.h>
 #include <math.h>
@@ -58,7 +58,8 @@ void mergeSort(int arr[], int l, int r)
 int main()
 {
   // freopen("input.txt", "r",stdin);
-  int arr[7] = {66, 12, 33, 57, 64, 27, 18};
+  // int arr[7] = {66, 12, 33, 57, 64, 27, 18};
+  int arr[10] = {3, 1, 2, 8, 7, 5, 9, 4, 0, 6};
   int arrLen = sizeof(arr) / sizeof(arr[0]);
   mergeSort(arr, 0, arrLen - 1);
   for (int i = 0; i < arrLen; i++)
