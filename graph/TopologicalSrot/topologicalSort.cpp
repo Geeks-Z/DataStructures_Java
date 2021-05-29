@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2021-04-02 08:32:18
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2021-05-19 08:42:54
+ * @LastEditTime: 2021-05-29 22:12:38
  */
 #include <stdio.h>
 #include <vector>
@@ -47,7 +47,7 @@ bool topologicalSort()
         q.push(v);
       }
     }
-    //清空顶点u的出边(如务必要可不写)
+    //清空顶点u的出边(如无必要可不写)
     G[u].clear();
     num++;
   }
